@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Decathlon Web MVP</title>
     <style>
-    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    body { font-family: system-ui, sans-serif; max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
     .row { display: flex; gap: .5rem; align-items: center; margin-bottom: .5rem; flex-wrap: wrap; }
     .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; }
     table { width: 100%; border-collapse: collapse; }
-    th, td { border-bottom: 1px solid #eee; padding: .5rem; text-align: left; }
+    th, td { border-bottom: 1px solid #eee; padding: .5rem; text-align: left; white-space: nowrap; }
     #error { color: #b00020; }
   </style>
 </head>
@@ -33,10 +33,27 @@
         <input id="name2" placeholder="same as above" />
         <label for="event">Event</label>
         <select id="event" data-testid="eventSelect">
-            <option value="100m">100m (s)</option>
-            <option value="longJump">Long Jump (cm)</option>
-            <option value="shotPut">Shot Put (m)</option>
-            <option value="400m">400m (s)</option>
+            <optgroup label="Decathlon">
+                <option value="deca_100m">Deca 100m (s)</option>
+                <option value="deca_longJump">Deca Long Jump (cm)</option>
+                <option value="deca_shotPut">Deca Shot Put (m)</option>
+                <option value="deca_highJump">Deca High Jump (cm)</option>
+                <option value="deca_400m">Deca 400m (s)</option>
+                <option value="deca_110mHurdles">Deca 110m Hurdles (s)</option>
+                <option value="deca_discusThrow">Deca Discus Throw (m)</option>
+                <option value="deca_poleVault">Deca Pole Vault (cm)</option>
+                <option value="deca_javelinThrow">Deca Javelin Throw (m)</option>
+                <option value="deca_1500m">Deca 1500m (s)</option>
+            </optgroup>
+            <optgroup label="Heptathlon">
+                <option value="hept_100mHurdles">Hept 100m Hurdles (s)</option>
+                <option value="hept_highJump">Hept High Jump (cm)</option>
+                <option value="hept_shotPut">Hept Shot Put (m)</option>
+                <option value="hept_200m">Hept 200m (s)</option>
+                <option value="hept_longJump">Hept Long Jump (cm)</option>
+                <option value="hept_javelinThrow">Hept Javelin Throw (m)</option>
+                <option value="hept_800m">Hept 800m (s)</option>
+            </optgroup>
         </select>
         <label for="raw">Result</label>
         <input id="raw" data-testid="rawInput" type="number" step="0.01" />
@@ -51,10 +68,25 @@
         <thead>
         <tr>
             <th>Name</th>
-            <th>100m</th>
-            <th>Long Jump</th>
-            <th>Shot Put</th>
-            <th>400m</th>
+            <th>Deca 100m</th>
+            <th>Deca Long Jump</th>
+            <th>Deca Shot Put</th>
+            <th>Deca High Jump</th>
+            <th>Deca 400m</th>
+            <th>Deca 110m Hurdles</th>
+            <th>Deca Discus</th>
+            <th>Deca Pole Vault</th>
+            <th>Deca Javelin</th>
+            <th>Deca 1500m</th>
+            <th>Hept 100m Hurdles</th>
+            <th>Hept High Jump</th>
+            <th>Hept Shot Put</th>
+            <th>Hept 200m</th>
+            <th>Hept Long Jump</th>
+            <th>Hept Javelin</th>
+            <th>Hept 800m</th>
+            <th>Deca Total</th>
+            <th>Hept Total</th>
             <th>Total</th>
         </tr>
         </thead>

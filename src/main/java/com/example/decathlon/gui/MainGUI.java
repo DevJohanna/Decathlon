@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.*;
 
 import com.example.decathlon.deca.*;
+import com.example.decathlon.heptathlon.*;
 
 
 public class MainGUI {
@@ -39,8 +40,10 @@ public class MainGUI {
         String[] disciplines = {
                 "100m", "400m", "1500m", "110m Hurdles",
                 "Long Jump", "High Jump", "Pole Vault",
-                "Discus Throw", "Javelin Throw", "Shot Put"
-        };
+                "Discus Throw", "Javelin Throw", "Shot Put",
+                "Hep 200m", "Hep 800m", "Hep 100m Hurdles",
+                "Hep High Jump", "Hep Long Jump", "Hep Shot Put",
+                "Hep Javelin Throw"};
         disciplineBox = new JComboBox<>(disciplines);
         panel.add(new JLabel("Select Discipline:"));
         panel.add(disciplineBox);
@@ -116,6 +119,27 @@ public class MainGUI {
                     case "Shot Put":
                         DecaShotPut decaShotPut = new DecaShotPut();
                         score = decaShotPut.calculateResult(result);
+                        break;
+                    case "Hep 100m Hurdles":
+                        score = new Hep100MHurdles().calculateResult(result);
+                        break;
+                    case "Hep High Jump":
+                        score = new HeptHightJump().calculateResult(result);
+                        break;
+                    case "Hep Shot Put":
+                        score = new HeptShotPut().calculateResult(result);
+                        break;
+                    case "Hep 200m":
+                        score = new Hep200M().calculateResult(result);
+                        break;
+                    case "Hep Long Jump":
+                        score = new HeptLongJump().calculateResult(result);
+                        break;
+                    case "Hep Javelin Throw":
+                        score = new HeptJavelinThrow().calculateResult(result);
+                        break;
+                    case "Hep 800m":
+                        score = new Hep800M().calculateResult(result);
                         break;
                 }
 
